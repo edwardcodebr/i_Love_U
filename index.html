@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Message</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #1d1d1d;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        color: azure;
+    }
+
+    .heart {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        position: relative;
+        animation: heartbeat 3s infinite;
+        display: none;
+    }
+
+    @keyframes heartbeat {
+        0% {
+            transform: scale(0.75);
+        }
+        20% {
+            transform: scale(1);
+        }
+        40% {
+            transform: scale(0.75);
+        }
+        60% {
+            transform: scale(1);
+        }
+        80% {
+            transform: scale(0.75);
+        }
+        100% {
+            transform: scale(0.75);
+        }
+    }
+
+    .loading {
+        font-size: 24px;
+        margin-top: 20px;
+        display: none;
+    }
+
+    .message {
+        font-size: 36px;
+        margin-top: 40px;
+        display: none;
+    }
+
+    .heart-final {
+        font-size: 72px;
+        color: red;
+        display: none;
+    }
+</style>
+</head>
+<body>
+<div class="heart"></div>
+<div class="loading">Carregando...</div>
+<div class="message">Eu te amo, sweetie</div>
+<div class="heart-final">❤️</div>
+<script>
+    setTimeout(function() {
+        document.querySelector('.heart').style.display = 'block';
+        setTimeout(function() {
+            document.querySelector('.loading').style.display = 'block';
+            setTimeout(function() {
+                document.querySelector('.loading').style.display = 'none';
+                document.querySelector('.message').style.display = 'block';
+                setTimeout(function() {
+                    document.querySelector('.heart-final').style.display = 'block';
+                }, 2000);
+            }, 2000);
+        }, 2000);
+    }, 1000);
+</script>
+</body>
+</html>
